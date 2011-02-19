@@ -1,25 +1,22 @@
-/*
- * Application.h
+/**
+ * @file Application.h
  *
- *  Created on: Feb 5, 2011
- *      Author: jwright
+ * @par
+ * Copyright Jeremy Wright (c) 2011
+ * Creative Commons Attribution-ShareAlike 3.0 Unported License.
  */
-
 #ifndef APPLICATION_H_
 #define APPLICATION_H_
-
-#include <tr1/memory>
 
 namespace cpp_practicum {
 
 class Application {
 public:
-	typedef std::tr1::shared_ptr<Application> Ptr;
-	static Application::Ptr construct();
+	Application();
 	virtual ~Application();
 	void run();
 private:
-	Application();
+
 };
 
 

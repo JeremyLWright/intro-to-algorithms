@@ -1,16 +1,20 @@
-/*
- * main.cpp
+/**
+ * @file main.cpp
  *
- *  Created on: Feb 5, 2011
- *      Author: jwright
+ * @par
+ * C++ Practicum Solutions
+ * Problem Set X, Problem Y
+ *
+ * @par
+ * Copyright Jeremy Wright (c) 2011
+ * Creative Commons Attribution-ShareAlike 3.0 Unported License.
  */
 #include <iostream>
 #include "Application.h"
 using namespace cpp_practicum;
 int main(int argc, char* argv[])
 {
-	std::cout << "Hello Testable application." << std::endl;
-	Application::Ptr app = Application::construct();
+	Application* app = new Application();
 	app->run();
 
 }

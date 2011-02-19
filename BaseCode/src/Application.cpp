@@ -1,18 +1,22 @@
-/*
- * Application.cpp
+/**
+ * @file Application.cpp
  *
- *  Created on: Feb 5, 2011
- *      Author: jwright
+ * @par
+ * C++ Practicum Solutions
+ * Problem Set X, Problem Y
+ *
+ * @par
+ * Copyright Jeremy Wright (c) 2011
+ * Creative Commons Attribution-ShareAlike 3.0 Unported License.
  */
 
 #include "Application.h"
 #include <iostream>
 namespace cpp_practicum {
 
-Application::Ptr Application::construct()
+
+Application::Application()
 {
-	Application::Ptr c(new Application());
-	return c;
 }
 
 Application::~Application() {
@@ -22,10 +26,6 @@ Application::~Application() {
 void Application::run()
 {
 	std::cout << "Hello OO World" << std::endl;
-}
-
-Application::Application()
-{
 }
 
 }
