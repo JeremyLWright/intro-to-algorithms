@@ -15,6 +15,6 @@ using namespace cpp_practicum;
 int main(int argc, char* argv[])
 {
 	Application* app = new Application();
-	app->run();
+	app->run(argv[1]);
 
 }

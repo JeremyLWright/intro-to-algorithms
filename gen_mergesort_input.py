@@ -19,9 +19,25 @@ class FileIntrepreter(OutputIntrepreter):
        self.write_to_file(array, "out")
 
 class WriteGTest(OutputIntrepreter):
-    pass
+    def load_array(self, f, array, array_name):
+        f.write("for(int i = 0; i < %d; ++i){\n"%len(array))
+        for i in range(len(array)):
+            f.write("%s[i] = %d;\n"%(array_name, array[i]))
+        f.write("}\n");
 
-for file_num in range(45):
+    def output(self, array):
+        f = open("TestGenRandom.cpp", "a")
+        f.write("\n\nTEST(RandomGenerated, Len_%d\n)"%(len(array)))
+        f.write("uint32_t* array = new uint32_t[%d];\n"%(len(array)+1))
+        f.write("uint32_t* sorted = new uint32_t[%d];\n"%(len(array)+1))
+        f.write("MergeSort m = MergeSort(%d);\n"%(len(array)+1))
+        self.load_array(f, array, "array")
+        array.sort()
+        self.load_array(f, array, "sorted")
+        f.write("m.mergesort(array, 0, %d);\n"%(len(array)+1))
+        f.write("for(int i = 0;	i < %d; ++i)\nEXPECT_EQ( array[i], sorted[i]);"%len(array))
+
+for file_num in range(15):
     y = []
     f = FileIntrepreter(file_num)
     for i in range(randint(10000, 500000)):

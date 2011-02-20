@@ -7,14 +7,14 @@
  */
 #ifndef APPLICATION_H_
 #define APPLICATION_H_
-
+#include <string>
 namespace cpp_practicum {
-
+using std::string;
 class Application {
 public:
 	Application();
 	virtual ~Application();
-	void run();
+	void run(string filename);
 private:
 
 };
