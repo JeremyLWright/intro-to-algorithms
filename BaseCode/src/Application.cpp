@@ -39,15 +39,18 @@ void Application::run(string filename)
 		file.next();
 		input_array[i] = format.get_input_value();
 	}
-	cout << "Loaded" <<endl;
+
 	MergeSort m = MergeSort(input_size);
 	m.mergesort(input_array, 0, input_size-1);
-	ofstream f("calc_output.out");
+	string suffix = ".out";
+	filename.append(suffix);
+	ofstream f(filename.c_str());
 	f << input_size << endl;
 	for(uint32_t i = 0; i < input_size; ++i)
 	{
 		f << input_array[i] << endl;
 	}
+	delete[] input_array;
 }
 
 }
