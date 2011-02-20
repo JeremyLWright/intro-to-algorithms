@@ -12,13 +12,13 @@
 using std::vector;
 class MergeSort {
 public:
-	MergeSort();
-	static void merge(uint32_t a[], uint32_t l, uint32_t m, uint32_t r);
-	static void mergesort(uint32_t a[], uint32_t l, uint32_t r);
-private:
-
-	const uint32_t array_max;
+	MergeSort(size_t max_input_size);
 	virtual ~MergeSort();
+	void merge(uint32_t a[], uint32_t l, uint32_t m, uint32_t r);
+	void mergesort(uint32_t a[], uint32_t l, uint32_t r);
+private:
+	uint32_t* aux;
+
 };
 
 #endif /* MERGESORT_H_ */
